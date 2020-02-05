@@ -15,6 +15,11 @@ include $(CLEAR_VARS)
 # The base directory for Dialer sources.
 BASE_DIR := java/com/android
 
+include $(LOCAL_PATH)/version.mk
+
+LOCAL_AAPT_FLAGS += --version-name "$(version_name_package)"
+LOCAL_AAPT_FLAGS += --version-code $(version_code_package)
+
 # Exclude files incompatible with AOSP.
 EXCLUDE_FILES := \
 	$(BASE_DIR)/incallui/calllocation/impl/AuthException.java \
